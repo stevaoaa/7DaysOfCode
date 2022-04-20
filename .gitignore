@@ -1,6 +1,9 @@
 # properties file
 local.properties
 
+# inteliJ files
+.idea
+
 # Compiled class file
 *.class
 
