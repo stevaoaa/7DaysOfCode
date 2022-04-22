@@ -49,7 +49,7 @@ public class Day2 {
         int end   = jsonMovies.indexOf(']');
 
         // maintains only the content surrounded by the square brackets
-        jsonMovies = jsonMovies.substring(begin + 1, end);
+        jsonMovies = jsonMovies.substring(begin + 1, end - 1);
 
         // simple remove the open curly brackets "{" from the content
         jsonMovies = jsonMovies.replace("{","");
