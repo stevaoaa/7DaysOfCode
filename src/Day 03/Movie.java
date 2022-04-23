@@ -34,64 +34,32 @@ public class Movie {
         return rank;
     }
 
-    public void setRank(String rank) {
-        this.rank = rank;
-    }
-
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getFullTitle() {
         return fullTitle;
     }
 
-    public void setFullTitle(String fullTitle) {
-        this.fullTitle = fullTitle;
-    }
-
     public int getYear() {
         return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
     }
 
     public String getUrlImage() {
         return urlImage;
     }
 
-    public void setUrlImage(String urlImage) {
-        this.urlImage = urlImage;
-    }
-
     public String getCrew() {
         return crew;
-    }
-
-    public void setCrew(String crew) {
-        this.crew = crew;
     }
 
     public float getImDbRating() {
         return imDbRating;
     }
 
-    public void setImDbRating(float imDbRating) {
-        this.imDbRating = imDbRating;
-    }
-
     public int getImDbRatingCount() {
         return imDbRatingCount;
-    }
-
-    public void setImDbRatingCount(int imDbRatingCount) {
-        this.imDbRatingCount = imDbRatingCount;
     }
 
     @Override
