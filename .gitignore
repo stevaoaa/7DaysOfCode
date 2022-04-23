@@ -1,8 +1,13 @@
+# generated files
+index.html
+
 # properties file
 local.properties
+*.iml
 
 # inteliJ files
 .idea
+/out
 
 # Compiled class file
 *.class
