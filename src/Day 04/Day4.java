@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Goal: Parse and extract the information retrieved from the JSON.
+ * Goal: Create a class to handle HTML generation.
  */
 
 public class Day4 {
