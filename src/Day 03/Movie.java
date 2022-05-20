@@ -50,7 +50,7 @@ public class Movie implements Content{
         return crew;
     }
 
-    public String getImDbRating() {
+    public String getRating() {
         return imDbRating;
     }
 
@@ -71,5 +71,21 @@ public class Movie implements Content{
                 ", imDbRating=" + imDbRating +
                 ", imDbRatingCount=" + imDbRatingCount +
                 '}';
+    }
+
+
+    /**
+     * Day 7 solution; uses Comparable interface to allow comparison between objects from classes that implements
+     * Content interface.
+     * @param other the object to be compared.
+     * @return
+     */
+    @Override
+    public int compareTo(Content other) {
+
+        Integer myRating = Integer.parseInt(this.getRating());
+        Integer otherRating = Integer.parseInt(other.getRating());
+
+        return myRating.compareTo(otherRating);
     }
 }
