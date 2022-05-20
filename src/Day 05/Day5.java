@@ -38,10 +38,10 @@ public class Day5 {
         String jsonMovies = response.body();
 
         // parse the json content into a list of strings where each element is a movie
-        String[] listOfMoviesInString = JsonParser.parseJsonMovies(jsonMovies);
+        String[] listOfMoviesInString = ImdbMovieJsonParser.parseJsonMovies(jsonMovies);
 
         // encapsulate the list into a list of objects instance of Movie class
-        List<Movie> listOfMovies = JsonParser.getMovies(listOfMoviesInString);
+        List<Movie> listOfMovies = ImdbMovieJsonParser.getMovies(listOfMoviesInString);
 
         // the file that will store the HTML generated page
         File file = new File ("index.html");

@@ -1,8 +1,10 @@
+import java.io.IOException;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class JsonParser{
+public class ImdbMovieJsonParser implements IJsonParser {
 
 
     /**
@@ -58,6 +60,12 @@ public class JsonParser{
         return results;
     }
 
+
+    /**
+     *
+     * @param listOfMovies an array of String witch each element is a String with a range of attributes separated by comma ","
+     * @return an ArrayList witch each element is an instance of the Movie class
+     */
     public static List<Movie> getMovies(String[] listOfMovies){
 
         // will store the results
@@ -86,11 +94,11 @@ public class JsonParser{
             String rank = matches.get(1);
             String title = matches.get(2);
             String fullTitle = matches.get(3);
-            int year = Integer.parseInt(matches.get(4));
+            String year = matches.get(4);
             String urlImage = matches.get(5);
             String crew = matches.get(6);
-            float imDbRating = Float.parseFloat(matches.get(7));
-            int imDbRatingCount = Integer.parseInt(matches.get(8));
+            String imDbRating = matches.get(7);
+            String imDbRatingCount = matches.get(8);
 
             // create a movie instance
             Movie m = new Movie(id, rank, title, fullTitle, year, urlImage, crew, imDbRating, imDbRatingCount);
@@ -104,4 +112,28 @@ public class JsonParser{
     }
 
 
+    /**
+     * Encapsulate the behaviour of the ImdbMovieJsonParser class. Used starting from Day 06
+     * @param url the URL used to perform the call to the IMDB API
+     * @return an ArrayList witch each element is an instance of the Movie class
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    @Override
+    public List<? extends Content> parse(String url) throws IOException, InterruptedException {
+
+        // get the response from the ImdbClient
+        HttpResponse<String> response = ImdbApiClient.httpRequest(url);
+
+        // get the json content from the response
+        String jsonMovies = response.body();
+
+        // parse the json content into a list of strings where each element is a movie
+        String[] listOfMoviesInString = ImdbMovieJsonParser.parseJsonMovies(jsonMovies);
+
+        // encapsulate the list into a list of objects instance of Movie class
+        List<Movie> listOfMovies = ImdbMovieJsonParser.getMovies(listOfMoviesInString);
+
+        return listOfMovies;
+    }
 }
