@@ -57,7 +57,7 @@ public class HTMLGenerator {
         for (Movie movie: listOfMovies) {
 
             // using the template with the dada of the given movie
-            writer.println(String.format(divTemplate, movie.getTitle(), movie.getUrlImage(), movie.getFullTitle(), movie.getImDbRating(), movie.getYear()));
+            writer.println(String.format(divTemplate, movie.getTitle(), movie.getUrlImage(), movie.getFullTitle(), movie.getRating(), movie.getYear()));
         }
 
         // finish the html skeleton
