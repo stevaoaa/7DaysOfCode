@@ -119,11 +119,11 @@ public class Day3 {
             String rank = matches.get(1);
             String title = matches.get(2);
             String fullTitle = matches.get(3);
-            int year = Integer.parseInt(matches.get(4));
+            String year = matches.get(4);
             String urlImage = matches.get(5);
             String crew = matches.get(6);
-            float imDbRating = Float.parseFloat(matches.get(7));
-            int imDbRatingCount = Integer.parseInt(matches.get(8));
+            String imDbRating = matches.get(7);
+            String imDbRatingCount = matches.get(8);
 
             // create a movie instance
             Movie m = new Movie(id, rank, title, fullTitle, year, urlImage, crew, imDbRating, imDbRatingCount);

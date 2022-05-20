@@ -1,16 +1,16 @@
-public class Movie {
+public class Movie implements Content{
 
     private String id;
     private String rank;
     private String title;
     private String fullTitle;
-    private int year;
+    private String year;
     private String urlImage;
     private String crew;
-    private float imDbRating;
-    private int imDbRatingCount;
+    private String imDbRating;
+    private String imDbRatingCount;
 
-    public Movie(String id, String rank, String title, String fullTitle, int year, String urlImage, String crew, float imDbRating, int imDbRatingCount) {
+    public Movie(String id, String rank, String title, String fullTitle, String year, String urlImage, String crew, String imDbRating, String imDbRatingCount) {
         this.id = id;
         this.rank = rank;
         this.title = title;
@@ -26,10 +26,6 @@ public class Movie {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getRank() {
         return rank;
     }
@@ -42,7 +38,7 @@ public class Movie {
         return fullTitle;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
@@ -54,11 +50,11 @@ public class Movie {
         return crew;
     }
 
-    public float getImDbRating() {
+    public String getImDbRating() {
         return imDbRating;
     }
 
-    public int getImDbRatingCount() {
+    public String getImDbRatingCount() {
         return imDbRatingCount;
     }
 
